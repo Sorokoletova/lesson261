@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+    image: tsorokoletova/lesson26
+    ports:
+    - 8080:8080
+    restart: always
+    depends_on:
+    - pg
+    - migration
+  migration:
+    build:
+      context: .
+    image: tsorokoletova/lesson26
+    depends_on:
+     - pg
+  pg:
+    image: postgres
+    environment:
+     - POSTGRES_PASSWORD=password_db
+     - POSTGRES_USER=user_db
+     - POSTGRES_DB=app_db
+
+
+

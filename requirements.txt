@@ -1,0 +1,12 @@
+# Main packages
+Flask
+flask-restx
+Flask-CORS
+Flask-SQLAlchemy
+marshmallow
+PyJWT
+psycopg2-binary
+# For test
+pytest
+pytest-cov
+flask-migrate
