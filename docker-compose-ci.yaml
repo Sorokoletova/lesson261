@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  app:
+    image: tsorokoletova/lesson26:$GITHUB_REF_NAME-$GITHUB_RUN_ID
+    ports:
+    - 8080:8080
+    restart: always
+    depends_on:
+    - pg
+    - migration
+  migration:
+    image: tsorokoletova/lesson26:$GITHUB_REF_NAME-$GITHUB_RUN_ID
+    depends_on:
+     - pg
+  pg:
+    image: postgres
+    environment:
+     - POSTGRES_PASSWORD=&password_db
+     - POSTGRES_USER=&user_db
+     - POSTGRES_DB=&app_db
+
+
+
