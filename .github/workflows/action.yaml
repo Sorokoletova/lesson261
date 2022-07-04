@@ -4,7 +4,7 @@ jobs:
   build_and_push:
     runs-on: ubuntu-latest
     steps:
-      - name: clone code
+      - name: checkout
         uses: actions/checkout@v2
       - name: docker build
         run: docker build -t tsorokoletova/lesson26:$GITHUB_REF_NAME-$GITHUB_RUN_ID .
@@ -23,7 +23,7 @@ jobs:
           mkdir deploy
           cat docker-compose-ci.yaml | envsubst > deploy/docker-compose.yaml
           cat config-ci.py | envsubst > deploy/config.py
-      - name: copy to server
+      - name: copy files
       uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.HOST }}
