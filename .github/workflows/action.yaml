@@ -13,8 +13,12 @@ jobs:
       - name: docker push
         run: docker push tsorokoletova/lesson26:$GITHUB_REF_NAME-$GITHUB_RUN_ID
   deploy:
-    needs: build_and_push
+    needs: build_and_pus
     runs-on: ubuntu-latest
+    env:
+      password_db: ${{ secrets.PASSWORD_DB }}
+      user_db: ${{ secrets.USER_DB }}
+      name_db: ${{ secrets.NAME_DB }}
     steps:
       - name: clone
         uses: actions/checkout@v2

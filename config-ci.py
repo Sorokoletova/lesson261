@@ -15,6 +15,6 @@ class TestingConfig(BaseConfig):
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
     SQLALCHEMY_ECHO = True
-    SQLALCHEMY_DATABASE_URI = "postgresql://$user_db:$password_db@pg/$app_db"
+    SQLALCHEMY_DATABASE_URI = "postgresql://$USER_DB:$PASSWORD_DB@pg/$NAME_DB"
 #        "sqlite:///project.db"
 #       "postgresql://user_db:password@db/app_db"
