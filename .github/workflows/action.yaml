@@ -13,7 +13,7 @@ jobs:
       - name: docker push
         run: docker push tsorokoletova/lesson26:$GITHUB_REF_NAME-$GITHUB_RUN_ID
   deploy:
-    needs: build_and_pus
+    needs: build_and_push
     runs-on: ubuntu-latest
     env:
       DB_PASSWORD: ${{ secrets.PASSWORD_DB }}
