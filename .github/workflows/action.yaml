@@ -16,9 +16,9 @@ jobs:
     needs: build_and_pus
     runs-on: ubuntu-latest
     env:
-      PASSWORD_DB: ${{ secrets.PASSWORD_DB }}
-      USER_DB: ${{ secrets.USER_DB }}
-      NAME_DB: ${{ secrets.NAME_DB }}
+      DB_PASSWORD: ${{ secrets.PASSWORD_DB }}
+      DB_USER: ${{ secrets.USER_DB }}
+      DB_NAME: ${{ secrets.NAME_DB }}
     steps:
       - name: clone
         uses: actions/checkout@v2
