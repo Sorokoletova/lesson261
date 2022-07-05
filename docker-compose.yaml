@@ -22,6 +22,7 @@ services:
      - POSTGRES_PASSWORD=password_db
      - POSTGRES_USER=user_db
      - POSTGRES_DB=app_db
-
-
-
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+volumes:
+  pg_data:
