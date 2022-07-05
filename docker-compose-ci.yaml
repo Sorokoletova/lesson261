@@ -3,7 +3,7 @@ services:
   app:
     image:tsorokoletova/lesson26:$GITHUB_REF_NAME-$GITHUB_RUN_ID
     ports:
-    - '8080:8080'
+    - '8080:80'
     restart: always
     depends_on:
     - pg
