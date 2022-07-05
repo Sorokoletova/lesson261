@@ -44,7 +44,6 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             cd flask-app-ci
-#            echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker-compose up -d
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{secrets.DOCKER_TOKEN}}
             docker-compose up -d
 
