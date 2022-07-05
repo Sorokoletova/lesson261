@@ -33,7 +33,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
-          source: "deploy/docker-compose.yaml,deploy/config.py"
+          source: "deploy/docker-compose.yaml"
           target: "flask-app-ci"
           strip_components: 1
       - name: run
