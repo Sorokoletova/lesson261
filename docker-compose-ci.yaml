@@ -3,15 +3,15 @@ services:
   app:
     image:tsorokoletova/lesson26:$GITHUB_REF_NAME-$GITHUB_RUN_ID
     ports:
-    - 8080:8080
+    - '8080:8080'
     restart: always
     depends_on:
     - pg
-    - migration
-  migration:
-    image:tsorokoletova/lesson26:$GITHUB_REF_NAME-$GITHUB_RUN_ID
-    depends_on:
-    - pg
+#    - migration
+#  migration:
+#    image:tsorokoletova/lesson26:$GITHUB_REF_NAME-$GITHUB_RUN_ID
+#    depends_on:
+#    - pg
   pg:
     image: postgres
     environment:
@@ -19,9 +19,9 @@ services:
      - POSTGRES_USER=&DB_USER
      - POSTGRES_DB=&DB_NAME
     volumes:
-      - data:/var/lib/postgresql/data
+      - pg_data:/var/lib/postgresql/data
 volumes:
-  data:
+  pg_data:
 
 
 

@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.3"
 services:
   app:
     build:
@@ -9,13 +9,12 @@ services:
     restart: always
     depends_on:
     - pg
-    - migration
-  migration:
-    build:
-      context: .
-    image: tsorokoletova/lesson26
-    depends_on:
-     - pg
+#  migration:
+#    build:
+#      context: .
+#    image: tsorokoletova/lesson26
+#    depends_on:
+#     - pg
   pg:
     image: postgres
     environment:
